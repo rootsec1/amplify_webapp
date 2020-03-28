@@ -12,9 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 //LOCAL
 import GradientButton from '../../components/GradientButton';
-import RouterLink from '../../components/RouterLink';
 
-class SignIn extends React.Component {
+class SignUp extends React.Component {
     render() {
         const { classes } = this.props;
 
@@ -61,17 +60,21 @@ class SignIn extends React.Component {
                     />
                     <Grid container>
                       <Grid item xs>
-                        <RouterLink title="Forgot Password" />
+                        <Link href="#" variant="body2" style={{fontWeight: 'bold', fontSize: 16}}>
+                          Forgot password?
+                        </Link>
                       </Grid>
                       <Grid item>
-                        <RouterLink title="Don't have an account? Sign Up" to="/signup" />
+                        <Link href="#" variant="body2" style={{fontWeight: 'bold', fontSize: 16}}>
+                          {"Don't have an account? Sign Up"}
+                        </Link>
                       </Grid>
                     </Grid>
                     <Box mt={5}>
                         <Typography variant="body2" color="textSecondary" align="center">
                             {'Powered by '}
-                            <Link color="primary" href="https://www.tvast.in/">
-                                TVAST
+                            <Link color="inherit" href="https://www.tvast.in/">
+                                Tvast
                             </Link>
                         </Typography>
                     </Box>
@@ -83,7 +86,7 @@ class SignIn extends React.Component {
     }
 };
 
-SignIn.propTypes = {
+SignUp.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
@@ -115,5 +118,4 @@ const styles = theme => ({
     }
 });
 
-export default withStyles(styles)(SignIn);
-
+export default withStyles(styles)(SignUp);
